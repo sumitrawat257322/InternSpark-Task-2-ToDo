@@ -1,0 +1,474 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+    width: 100%;
+    max-width: 550px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #222;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #777;
+    font-size: 15px;
+}
+
+
+/* =========================
+   INPUT AREA
+========================= */
+
+.task-input {
+    display: flex;
+    gap: 10px;
+}
+
+.task-input input {
+    flex: 1;
+
+    padding: 14px 16px;
+
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.task-input input:focus {
+    border-color: #667eea;
+
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.task-input button {
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #667eea;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.task-input button:hover {
+    background: #5568d9;
+    transform: translateY(-2px);
+}
+
+.task-input button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TASK COUNTER
+========================= */
+
+.task-info {
+    margin: 20px 0 10px;
+
+    color: #666;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters {
+    display: flex;
+    gap: 8px;
+
+    margin: 15px 0 20px;
+    padding: 6px;
+
+    background: #f1f3f8;
+
+    border-radius: 12px;
+}
+
+.filter-btn {
+    flex: 1;
+
+    padding: 10px 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: transparent;
+    color: #666;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    background: #e2e5ed;
+    color: #333;
+}
+
+.filter-btn.active {
+    background: #667eea;
+    color: #ffffff;
+
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+
+/* =========================
+   TASK LIST
+========================= */
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* =========================
+   TASK ITEM
+========================= */
+
+.task-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    margin-bottom: 10px;
+
+    background: #f7f7fb;
+
+    border-left: 4px solid #667eea;
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.task-item:hover {
+    transform: translateX(2px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   TASK TEXT
+========================= */
+
+.task-text {
+    flex: 1;
+
+    color: #333;
+
+    font-size: 15px;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   COMPLETED TASK
+========================= */
+
+.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.task-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.task-actions button {
+    padding: 8px 10px;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+/* Complete */
+
+.complete-btn {
+    background: #dff7e8;
+    color: #16803c;
+}
+
+.complete-btn:hover {
+    background: #c9f0d7;
+    transform: scale(1.05);
+}
+
+
+/* Delete */
+
+.delete-btn {
+    background: #ffe1e1;
+    color: #d32f2f;
+}
+
+.delete-btn:hover {
+    background: #ffd0d0;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   EMPTY MESSAGE
+========================= */
+
+#emptyMessage {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #999;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CLEAR COMPLETED
+========================= */
+
+.clear-btn {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 11px 15px;
+
+    border: 1px solid #ffd0d0;
+    border-radius: 10px;
+
+    background: #fff5f5;
+    color: #d32f2f;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.clear-btn:hover {
+    background: #ffe5e5;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .app {
+        max-width: 500px;
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .app {
+        margin-top: 30px;
+        padding: 22px;
+        border-radius: 17px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+
+    /* Input */
+
+    .task-input {
+        flex-direction: column;
+    }
+
+    .task-input input {
+        width: 100%;
+    }
+
+    .task-input button {
+        width: 100%;
+    }
+
+
+    /* Filters */
+
+    .filters {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .filter-btn {
+        padding: 9px 5px;
+        font-size: 13px;
+    }
+
+
+    /* Task */
+
+    .task-item {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .task-text {
+        font-size: 14px;
+    }
+
+    .task-actions button {
+        padding: 7px 9px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .app {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .filters {
+        flex-direction: column;
+
+        background: transparent;
+
+        padding: 0;
+
+        gap: 6px;
+    }
+
+    .filter-btn {
+        width: 100%;
+        background: #f1f3f8;
+    }
+
+    .filter-btn.active {
+        background: #667eea;
+        color: white;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .task-actions {
+        justify-content: flex-end;
+    }
+}
